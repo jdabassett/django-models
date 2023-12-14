@@ -1,10 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div>
-        <h2>Snack Name: {{snack_detailed.name}}</h2>
-        <p>Description: {{snack_detailed.description}}</p>
-        <p>Purchaser: {{snack_detailed.purchaser}}</p>
-        <a href="{% url 'snacks_list' %}">Return to snacks</a>
+    <h1 class="mb-6 text-3xl text-red-800">Snack Name: {{snack_detailed.name}}</h1>
+    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-5">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Purchaser: {{snack_detailed.purchaser}}</h5>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Description: {{snack_detailed.description}}</p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Date Created: {{snack_detailed.date_time|date:"Y-m-d"}}</p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Time Created: {{snack_detailed.date_time|time:"H:i"}}</p>
+            <a href="{% url 'snacks_list' %}"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                Return to snacks
+            </a>
+        </div>
     </div>
 {% endblock content %}
+
+
+<!--    <div>-->
+<!--        <h2>Snack Name: {{snack_detailed.name}}</h2>-->
+<!--        <p>Description: {{snack_detailed.description}}</p>-->
+<!--        <p>Purchaser: {{snack_detailed.purchaser}}</p>-->
+<!--        <p>Date Created: {{snack_detailed.date_time|date:"Y-m-d"}}</p>-->
+<!--        <p>Time Created: {{snack_detailed.date_time|time:"H:i"}}</p>-->
+<!--        <a href="{% url 'snacks_list' %}">Return to snacks</a>-->
+<!--    </div>-->

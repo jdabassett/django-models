@@ -1,3 +1,6 @@
+{% load compress %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +9,15 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Snack Tracker</title>
-    <!-- Other common meta tags, stylesheets, or scripts -->
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'src/output.css' %}">
+    {% endcompress %}
 </head>
-<body>
+<body class="bg-green-50">
+    <div class="container mx-auto mt-4">
         {% block content %}
         {% endblock content %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 </body>
 </html>

@@ -21,8 +21,10 @@ git clone <repository url>
 python3.? -m venv .venv
 # activate the virtual environment
 source .venv/bin/activate
-# install requirements
+# install django requirements
 pip install -r requirements
+# install npm requirements primarily for css styling
+npm install
 # create database 
 python3.? manage.py migrate
 # create a user account
