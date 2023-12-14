@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for snack in snacks_list %}
+        <li>
+            <a href="{% url 'snack_detailed' snack.pk %}">{{ snack.name }}</a>
+        </li>
+    {% endfor %}
+{% endblock content %}
