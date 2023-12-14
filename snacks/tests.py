@@ -20,10 +20,10 @@ class TestSnacksListView(TestCase):
 
     def test_snack_list_contents(self):
         response = self.client.get(reverse('snacks_list'))
-        response_html = response.content.decode('utf-8')
-        self.assertContains(response, "test_name")
-        self.assertContains(response, 'href="/1/"')
-        self.assertEqual(response_html.count("test_name"), 1)
+        snacks = response.context['snacks_list']
+        self.assertEqual(len(snacks), 1)
+        self.assertEqual(snacks[0].name, "test_name")
+        self.assertEqual(snacks[0].description, "test_description")
 
     def test_snack_detailed_status_code(self):
         response = self.client.get(reverse('snack_detailed', args=(1,)))
@@ -40,7 +40,7 @@ class TestSnacksListView(TestCase):
         self.assertEqual(snack.name,'test_name')
         self.assertEqual(snack.description, 'test_description')
         self.assertEqual(snack.purchaser.username, 'test_username')
-        
+
 
 
 

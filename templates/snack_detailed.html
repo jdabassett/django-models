@@ -2,9 +2,9 @@
 
 {% block content %}
     <div>
-        <h2>Snack Name: {{snack.name}}</h2>
-        <p>Description: {{snack.description}}</p>
-        <p>Purchaser: {{snack.purchaser}}</p>
+        <h2>Snack Name: {{snack_detailed.name}}</h2>
+        <p>Description: {{snack_detailed.description}}</p>
+        <p>Purchaser: {{snack_detailed.purchaser}}</p>
         <a href="{% url 'snacks_list' %}">Return to snacks</a>
     </div>
 {% endblock content %}
